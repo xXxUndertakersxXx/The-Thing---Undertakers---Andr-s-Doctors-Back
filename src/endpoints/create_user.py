@@ -9,4 +9,18 @@ from pydantic import BaseModel
 
 @app.post("/users")
 def create_user(nickname: str, db: Session = Depends(get_db)):
-    pass
+    user = UsersTable(
+        nickname=nickname,
+    )
+
+    try:
+        db.add(user)
+        db.commit()
+        db.refresh(user)
+    except:
+        db.rollback()
+        raise HTTPException(status_code=status.HTTP_409_CONFLICT, detail="Ya existe un Usuario con ese nickname")
+    finally:
+        db.close()
+
+    return JSONResponse(content={c.name: getattr(user, c.name) for c in user.__table__.columns})
