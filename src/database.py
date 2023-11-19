@@ -18,6 +18,7 @@ class UsersTable(__Base__):
     quarantine = Column(Boolean)
     active = Column(Boolean)
     next_user = Column(String(50))
+    stuck_door = Column(Boolean)
 
 
 class GamesTable(__Base__):

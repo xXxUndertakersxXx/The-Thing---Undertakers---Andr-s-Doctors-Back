@@ -58,6 +58,7 @@ def init_users_stats(game_name: str, db: Session):
         user.alive = True
         user.quarantine = False
         user.active = False
+        user.stuck_door = False
 
     i = random.randint(0, len(users) - 1)
     users[i].active = True
