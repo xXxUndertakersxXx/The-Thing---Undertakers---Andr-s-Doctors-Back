@@ -16,6 +16,7 @@ CARDS_METADATA = {
 
     # CONTAGIO
     "La Cosa": {
+        "target_type": "NA",
         "category": 'contagion',
         "number": 4,
         "quantity": 1,
@@ -25,6 +26,7 @@ CARDS_METADATA = {
     },
 
     "¡Infectado!": {
+        "target_type": "NA",
         "category": 'contagion',
         "number": 4,
         "quantity": 12,
@@ -40,53 +42,53 @@ CARDS_METADATA = {
 
     # ACCION
     "Lanzallamas": {
+        "target_type": "ADYACENT",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Ésta es la única carta que puede eliminar a un jugador adyacente.""",
         "play": lanzallamas
     },
     "Análisis": {
+        "target_type": "ADYACENT",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Si juegas esta carta sobre un jugador adyacente, debe mostrarte todas las
         cartas de su mano.""",
         "play": analisis
     },
     "Hacha": {
+        "target_type": "ADYACENT",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Puedes jugar esta carta sobre ti mismo o sobre un jugador adyacente para
         retirar una carta “Puerta atrancada” o “Cuarentena” que afecte a ese jugador.""",
         "play": hacha
     },
     "Sospecha": {
+        "target_type": "ADYACENT",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Coge 1 carta aleatoria de un jugador adyacente, mirala y devuélvesela.""",
         "play": sospecha
     },
     "Whisky": {
+        "target_type": "NA",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Enséñales todas tus cartas a los demás jugadores. Esta carta sólo puedes
         jugarla sobre ti mismo""",
         "play": whisky
     },
     "Determinación": {
+        "target_type": "NA",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Roba 3 cartas ¡Aléjate!, quédate con 1 en la mano y descarta el
         resto. A continuación, juega o descarta 1 carta. Puedes jugar otra carta
         “Determinación” en el mismo turno. Si hay cartas de ¡Pánico! en la parte superior del
@@ -95,20 +97,20 @@ CARDS_METADATA = {
         "play": determinacion
     },
     "Vigila tus espaldas": {
+        "target_type": "NA",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Invierte el orden de juego. Así que si el turno pasaba hacia la
         izquierda, ahora lo hace hacia la derecha. Esto afecta tanto al orden de turnos como
         a los intercambios de cartas.""",
         "play": vigila_tus_espaldas
     },
     "¡Cambio de lugar!": {
+        "target_type": "ADYACENT",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Cámbiate de sitio físicamente con un jugador que tengas al lado,
         salvo que te lo impida un obstáculo como “Cuarentena” o “Puerta atrancada”, Llévate
         tu mano de cartas al cambiar de lugar. A continuación, intercambia 1 carta con el
@@ -118,10 +120,10 @@ CARDS_METADATA = {
         "play": cambio_de_lugar
     },
     "¡Más vale que corras!": {
+        "target_type": "ANY",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Cámbiate de sitio físicamente con cualquier jugador que no
         esté bajo los efectos de “Cuarentena”, ignorando cualquier carta “Puerta atrancada”
         que haya en la mesa. Llévate tu mano de cartas al cambiar de lugar. A continuación,
@@ -131,10 +133,10 @@ CARDS_METADATA = {
         "play": mas_vale_que_corras
     },
     "Seducción": {
+        "target_type": "ANY",
         "category": 'action',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Intercambia 1 carta con cualquier jugador que no esté en Cuarentena y
         luego termina tu turno.""",
         "play": seduccion
@@ -142,37 +144,37 @@ CARDS_METADATA = {
 
     # DEFENSA
     "Aterrador": {
+        "target_type": "NA",
         "category": 'defense',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Sólo puedes jugar esta carta como respuesta a un ofrecimiento de
         intercambio de cartas. Niégate a un intercambio de cartas solicitado por un jugador o
         por el efecto de una carta. Mira la carta que te has negado a coger y devuélvesela a
         su dueño.""",
     },
     "Aquí estoy bien": {
+        "target_type": "NA",
         "category": 'defense',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Sólo puedes jugar esta carta como respuesta a una carta “¡Cambio
         de lugar!” o “¡Más vale que corras!” para cancelar su efecto.""",
     },
     "¡No, gracias!": {
+        "target_type": "NA",
         "category": 'defense',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Sólo puedes jugar esta carta como respuesta a un ofrecimiento de
         intercambio de cartas. Niégate a un intercambio de cartas solicitado por un jugador o
         por el efecto de una carta.""",
     },
     "¡Fallaste!": {
+        "target_type": "NA",
         "category": 'defense',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Sólo puedes jugar esta carta como respuesta a un ofrecimiento de
         intercambio de cartas. Niégate a un intercambio de cartas solicitado por un jugador o
         por el efecto de una carta. El siguiente jugador después de ti (siguiendo el orden de
@@ -184,20 +186,20 @@ CARDS_METADATA = {
         intercambio.""",
     },
     "¡Nada de barbacoas!": {
+        "target_type": "NA",
         "category": 'defense',
         "number": 4,
         "quantity": 3,
-        "needs_target": False,
         "description": """Sólo puedes jugar esta carta como respuesta a una carta
         “Lanzallamas” para evitar ser eliminado de la partida.""",
     },
 
     # OBSTACULO
     "Cuarentena": {
+        "target_type": "ADYACENT",
         "category": 'obstacle',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Puedes jugar esta carta sobre un jugador adyacente de tu elección.
         Durante las 2 siguientes rondas, el jugador “en Cuarentena” robará, intercambiará y
         descartará cartas mostrándoselas siempre a los demás jugadores. Además, no
@@ -212,10 +214,10 @@ CARDS_METADATA = {
         "play": cuarentena
     },
     "Puerta atrancada": {
+        "target_type": "ADYACENT",
         "category": 'obstacle',
         "number": 4,
         "quantity": 3,
-        "needs_target": True,
         "description": """Puedes jugar esta carta sobre la mesa, entre un adyacente y tú.
         Ninguno de los dos podéis realizar acciones que tengan como objetivo al otro (jugar
         cartas, intercambiar cartas y cambiar de lugar). La carta permanece boca arriba
