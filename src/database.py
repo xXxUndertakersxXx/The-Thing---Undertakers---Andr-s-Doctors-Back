@@ -24,6 +24,7 @@ class GamesTable(__Base__):
     __tablename__ = 'games'
 
     name = Column(String(50), primary_key=True)
+    creator = Column(String(50))
     min_players = Column(Integer)
     max_players = Column(Integer)
     player_count = Column(Integer)
