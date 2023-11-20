@@ -30,6 +30,12 @@ def get_started_game(nickname: str, db: Session = Depends(get_db)):
     active_user: UsersTable
     any((active_user := user).active for user in alive_users)
 
+    for i in range(len(alive_users) - 1):
+        for j in range(i + 1, len(alive_users)):
+            if alive_users[j].nickname == alive_users[i].next_user:
+                alive_users[i+1], alive_users[j] = alive_users[j], alive_users[i+1]
+                break
+
     return JSONResponse(content={
         'game_name': game.name,
         'phase': game.phase,
