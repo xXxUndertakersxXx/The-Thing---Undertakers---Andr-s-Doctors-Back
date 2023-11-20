@@ -29,7 +29,7 @@ def play_card(nickname: str, discard: bool, card_name: str, target: str | None =
     play_response = {}
     if not discard:
         target = target if (target is not None) else ""
-        play_response = CARDS_METADATA[card_name].play(nickname, target, game.name, db)
+        play_response = CARDS_METADATA[card_name]['play'](nickname, target, game.name, db)
 
     card: CardsTable = (
         db
