@@ -63,8 +63,9 @@ def test_get_legal_plays(get_test_db):
 
     response = client.get(f'/games/playing/{active_user}/active')
     assert response.status_code == 200
-    for card in response.json()['playable_cards']:
-        card_name = card['name']
+    for card_name in response.json()['playable_cards']:
+        card = response.json()['playable_cards'][card_name]
+
         needs_target = card['needs_target']
         valid_targets = card['valid_targets']
         target_type = CARDS_METADATA[card_name]['target_type']
