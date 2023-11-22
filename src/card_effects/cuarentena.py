@@ -6,4 +6,6 @@ from src.database import UsersTable, GamesTable, CardsTable, ShowedCardsTable, g
 
 
 def cuarentena(user_nickname: str, target_nickname: str, game_name: str, db: Session):
-    pass
+    target = db.get(UsersTable, target_nickname)
+    target.quarantine = True
+    db.commit()
