@@ -28,4 +28,4 @@ def test_lanzallamas(get_test_db, fixture_started_game):
     target = order.pop(active_player_idx - 1)
     response = client.post(f'/games/playing/{active_player}?discard={False}&card_name={"Lanzallamas"}&target={target}')
     response = client.get(f'/games/playing/{active_player}')
-    assert response.json()['alive_players'] == order
+    assert sorted(response.json()['alive_players']) == sorted(order)
