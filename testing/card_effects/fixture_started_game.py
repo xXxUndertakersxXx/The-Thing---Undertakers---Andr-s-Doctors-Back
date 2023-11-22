@@ -56,7 +56,9 @@ def get_active_player_with_card(card_name, client):
         response = client.get(f'/games/playing/{active_player}')
         active_player_has_card = (card_name in [card['name'] for card in response.json()['player_hand']])
         if not active_player_has_card:
-            response = client.post(f'/games/playing/{active_player}?discard={True}&card_name={"Lanzallamas"}')
+            card_name = None
+            any((card_name := card['name']) not in ["La Cosa", "¡Infectado!"] for card in response.json()['player_hand'])
+            response = client.post(f'/games/playing/{active_player}?discard={True}&card_name={card_name}')
 
     active_player_idx = None
     order = response.json()['alive_players']
