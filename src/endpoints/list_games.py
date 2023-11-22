@@ -24,7 +24,7 @@ def list_games(db: Session = Depends(get_db)):
                 "name": game.name,
                 "creator": game.creator,
                 "users_count": len(db.query(UsersTable).filter(UsersTable.game_name == game.name).all()),
-                "users_in": [user.game_name for user in db.query(UsersTable).filter(UsersTable.game_name == game.name).all()],
+                "users_in": [user.nickname for user in db.query(UsersTable).filter(UsersTable.game_name == game.name).all()],
                 "min_players": game.min_players,
                 "max_players": game.max_players
             }

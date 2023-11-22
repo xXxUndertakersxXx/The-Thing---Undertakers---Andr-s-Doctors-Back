@@ -40,12 +40,11 @@ def get_legal_plays(nickname: str, db: Session = Depends(get_db)):
             return players_nicknames
 
     return JSONResponse(content={
-        'playable_cards': [
-            {
-                'name': card.name,
+        'playable_cards': {
+            card.name: {
                 'needs_target': CARDS_METADATA[card.name]['target_type'] != "NA",
                 'valid_targets': valid_targets(card.name)
             }
             for card in hand
-        ]
+        }
     })

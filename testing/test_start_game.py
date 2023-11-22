@@ -93,7 +93,7 @@ def test_start_game(get_test_db):
             things += 1
         if card['name'] == '¡Infectado!' and card['owner'] != 'Deck':
             user = db.get(UsersTable, card['owner'])
-            assert user.role == 'active'
+            assert user.active
         if card['owner'] == nickname1:
             cards_count[0] += 1
         if card['owner'] == nickname2:
